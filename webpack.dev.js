@@ -1,10 +1,10 @@
 const merge = require('webpack-merge');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
 const common = require('./webpack.common.js');
 
 module.exports = merge(common, {
-    mode: 'production',
-    devtool: 'source-map',
+    mode: 'development',
+    devtool: 'eval-source-map',
     module: {
         rules: [
             {
@@ -16,11 +16,12 @@ module.exports = merge(common, {
             }
         ]
     },
-    optimization: {
-        minimizer: [
-            new UglifyJsPlugin({
-                sourceMap: true
-            }),
-        ],
-    },
+    plugins: [
+        new HardSourceWebpackPlugin()
+    ],
+    devServer: { 
+        contentBase: '/src/public', 
+        compress: true,
+        port: 5000,
+    }
 });
