@@ -1,7 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: __dirname + "/src/index.js",
+  entry: __dirname + '/src/index.js',
   output: {
     path: __dirname + '/dist',
     filename: 'bundle.js', 
@@ -15,12 +15,20 @@ module.exports = {
             exclude: [
                 /node_modules/
             ]
+        },
+        {
+            test: /\.(jpe?g|png|gif|svg|ico)$/i,
+            loader: 'file-loader',
+            options: {
+                name: '[name].[hash].[ext]',
+                outputPath: 'images',
+            },
         }
       ]
   },
   plugins: [ 
       new HtmlWebpackPlugin({
-          template: __dirname + "/src/public/index.html",
+          template: __dirname + '/src/public/index.html',
           inject: 'body'
       })
   ] 
