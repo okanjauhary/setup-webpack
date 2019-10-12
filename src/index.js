@@ -1,5 +1,5 @@
-import myclass from './app/myclass'
-import './assets/scss/app.scss'
+import myclass from 'App/myclass'
+import 'Assets/scss/app.scss'
 
 let test = new myclass()
 
