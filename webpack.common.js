@@ -1,3 +1,4 @@
+const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
@@ -31,5 +32,12 @@ module.exports = {
           template: __dirname + '/src/public/index.html',
           inject: 'body'
       })
-  ] 
+  ],
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'src/'),
+      'Assets': path.resolve(__dirname, 'src/assets/'),
+      'App': path.resolve(__dirname, 'src/app/')
+    }
+  }
 }
