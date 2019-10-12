@@ -8,10 +8,20 @@ module.exports = merge(common, {
     module: {
         rules: [
             {
-                test: /\.js$/,
-                use: 'babel-loader',
-                exclude: [
-                    /node_modules/
+                test: /\.(sass|scss)$/,
+                use: [
+                    {
+                        loader: "style-loader"
+                    },
+                    {
+                        loader: "css-loader"
+                    },
+                    {
+                        loader: "postcss-loader"
+                    },
+                    {
+                        loader: "sass-loader"
+                    }
                 ]
             }
         ]
