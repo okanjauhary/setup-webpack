@@ -7,5 +7,13 @@
 [lints]
 
 [options]
+module.file_ext=.js
+module.file_ext=.json
+module.file_ext=.jsx
+module.file_ext=.css
+module.file_ext=.scss
+module.name_mapper='^@' ->'<PROJECT_ROOT>/src'
+module.name_mapper='^App' ->'<PROJECT_ROOT>/src/app'
+module.name_mapper='^Assets' ->'<PROJECT_ROOT>/src/assets'
 
 [strict]
