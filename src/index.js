@@ -1,9 +1,9 @@
 // @flow
-import myclass from 'App/myclass';
-import 'Assets/scss/app.scss'
+import myclass from 'App/myclass.js';
+import 'Assets/scss/app.scss';
 
 let test = new myclass()
 
 console.log(test.msg)
 
-const a: string = 'sdsdsd';
+const str: string = 'this string';
