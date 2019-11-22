@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const FlowBabelWebpackPlugin = require('flow-babel-webpack-plugin');
 
 module.exports = {
   entry: __dirname + '/src/index.js',
@@ -31,7 +32,8 @@ module.exports = {
       new HtmlWebpackPlugin({
           template: __dirname + '/src/public/index.html',
           inject: 'body'
-      })
+      }),
+      new FlowBabelWebpackPlugin()
   ],
   resolve: {
     alias: {
